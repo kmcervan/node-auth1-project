@@ -4,6 +4,8 @@ const cors = require('cors');
 const session = require('express-session');
 
 // connecting routers will go here
+const authRouter = require('./auth/auth-router');
+const userRouter = require('./users/users-router');
 
 const server = express();
 
@@ -24,7 +26,8 @@ server.use(express.json());
 server.use(cors());
 
 //page connector goes here
-// server.use('/api/auth', )
+server.use('/api/auth', authRouter);
+server.use('/api/users', userRouter);
 
 server.get('/', (req, res) => {
     res.json('the api is ALIVEEEE');

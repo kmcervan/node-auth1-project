@@ -6,7 +6,7 @@ exports.up = function(knex) {
   //     tbl.string('name', 128).notNullable().unique();
   // })
   .createTable('users', tbl => {
-      tbl.increments('userId')
+      tbl.increments('')
       tbl.string('username', 128).notNullable().unique().index();
       tbl.string('password', 256).notNullable();
       // tbl.integer('roleId').unsigned().references('roleId').onDelete('RESTRICT').onUpdate('CASCADE')

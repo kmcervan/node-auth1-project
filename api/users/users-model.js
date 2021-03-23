@@ -8,13 +8,13 @@ module.exports = {
 }
 
 function get(){
-    return db('users')
+    return db('users');
 }
 function getBy(filter){
-    return db('users').where(filter).orderBy('userId');
+    return db('users').where(filter).orderBy('id');
 }
 async function add(user){
-    const [id] = await db('users').insert(user, 'userId');
+    const [id] = await db('users').insert(user, 'id');
     return getById(id);
 }
 function getById(id){
